@@ -21,13 +21,18 @@ namespace SecondHandMarket
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// 初始化商品数据
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MyGoods_Load(object sender, EventArgs e)
         {
             listView1_Load();
         }
 
         /// <summary>
-        /// 加载“我的”商品数据
+        /// 向listView1加载我的所有商品数据
         /// </summary>
         private void listView1_Load()//hasGoods没写没判断
         {
@@ -54,12 +59,20 @@ namespace SecondHandMarket
             }
             toolStripComboBox1.SelectedIndex = 0;
         }
-
+        /// <summary>
+        /// 编辑按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripButtonEdit_Click(object sender, EventArgs e)
         {
-            new Edit(Int32.Parse(toolStripComboBox1.SelectedItem.ToString())).ShowDialog();
+            new Edit(Int32.Parse(toolStripComboBox1.SelectedItem.ToString())).ShowDialog();//将下拉框选择的ID作为参数传入Edit窗口
         }
-
+        /// <summary>
+        /// 删除按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripButtonDelete_Click(object sender, EventArgs e)
         {
             int id = Int32.Parse(toolStripComboBox1.SelectedItem.ToString());
@@ -78,7 +91,11 @@ namespace SecondHandMarket
                 }
             }
         }
-
+        /// <summary>
+        /// 刷新按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripButtonRefresh_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();

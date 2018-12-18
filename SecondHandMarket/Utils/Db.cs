@@ -12,7 +12,7 @@ namespace SecondHandMarket
     {
         private SqlConnection con = new SqlConnection();
         private SqlCommand com = new SqlCommand();
-        private string conString;
+        private string conString;//数据库连接字符串
 
         public SqlConnection Con { get => con; set => con = value; }
         public SqlCommand Com { get => com; set => com = value; }
@@ -29,23 +29,30 @@ namespace SecondHandMarket
             Con.Open();
             Com.Connection = Con;
         }
-
+        /// <summary>
+        /// 获取SqlDataReader对象
+        /// </summary>
+        /// <param name="sqlString">sql语句</param>
+        /// <returns></returns>
         public SqlDataReader getSqlDataReader(string sqlString)
         {
             SqlCommand com_ = getSqlCommand(sqlString);
             return com_.ExecuteReader();
         }
-
-        public SqlConnection getSqlConnection()
-        {
-            return this.Con;
-        }
-
+        /// <summary>
+        /// 获取SqlCommand对象
+        /// </summary>
+        /// <param name="sqlString">sql语句</param>
+        /// <returns></returns>
         public SqlCommand getSqlCommand(string sqlString)
         {
             return new SqlCommand(sqlString, Con);
         }
-
+        /// <summary>
+        /// 获取SqlDataAdapter对象
+        /// </summary>
+        /// <param name="sqlString">sql语句</param>
+        /// <returns></returns>
         public SqlDataAdapter getSqlDataAdapter(string sqlString)
         {
             return new SqlDataAdapter(sqlString, this.Con);

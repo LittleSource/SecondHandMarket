@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SecondHandMarket
 {
+    /// <summary>
+    /// 配置类
+    /// </summary>
     class Config
     {
         //数据库连接字符串

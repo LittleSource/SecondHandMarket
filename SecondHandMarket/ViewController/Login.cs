@@ -14,7 +14,7 @@ namespace SecondHandMarket
 {
     public partial class login : Form
     {
-        //鼠标移动窗体功能
+        //鼠标移动窗体功能开始
         private bool formMove = false;//窗体是否移动
         Point formPoint;//窗体位置
         private void Login_MouseDown(object sender, MouseEventArgs e)
@@ -42,22 +42,33 @@ namespace SecondHandMarket
                 formMove = false;//停止移动
             }
         }
-
+        //鼠标移动窗体功能结束
+        public login()
+        {
+            InitializeComponent();
+        }
+        /// <summary>
+        /// 重置输入的信息
+        /// </summary>
         private void rest()
         {
             textBox2.Text = "";
             textBox1.Focus();
         }
-        public login()
-        {
-            InitializeComponent();
-        }
-
+        /// <summary>
+        /// label点击事件->关闭窗口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void label_login_close_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        /// <summary>
+        /// 登录按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             string name = textBox1.Text.Trim();
@@ -84,7 +95,7 @@ namespace SecondHandMarket
                     }
                     else
                     {
-                        User.NowLoginName = user.Name;
+                        User.NowLoginName = user.Name;//将登陆的账号信息保存到模型
                         Home home = new Home();
                         this.Visible = false;
                         home.ShowDialog();

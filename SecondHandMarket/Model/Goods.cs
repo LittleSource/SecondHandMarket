@@ -13,13 +13,13 @@ namespace SecondHandMarket.Model
     public class Goods : IModel
     {
         private Db db = new Db();
-        private int id;
-        private string goodName;
-        private byte[] picture;
-        private float newPirce;
-        private float oldPirce;
-        private string addDate;
-        private string userName;
+        private int id;//商品id
+        private string goodName;//商品名称
+        private byte[] picture;//二进制图片
+        private float newPirce;//新品价格
+        private float oldPirce;//二手价格
+        private string addDate;//发布日期
+        private string userName;//用户名，也就是手机号
 
         public int Id { get => id; set => id = value; }
         public string GoodName { get => goodName; set => goodName = value; }
@@ -28,7 +28,16 @@ namespace SecondHandMarket.Model
         public float OldPirce { get => oldPirce; set => oldPirce = value; }
         public string AddDate { get => addDate; set => addDate = value; }
         public string UserName { get => userName; set => userName = value; }
-
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="goodName"></param>
+        /// <param name="picture"></param>
+        /// <param name="newPirce"></param>
+        /// <param name="oldPirce"></param>
+        /// <param name="addDate"></param>
+        /// <param name="userName"></param>
         public Goods(int id, string goodName, byte[] picture, float newPirce, float oldPirce, string addDate, string userName)
         {
             this.Id = id;
@@ -39,9 +48,17 @@ namespace SecondHandMarket.Model
             this.AddDate = addDate;
             this.UserName = userName;
         }
+        /// <summary>
+        /// 无参构造函数
+        /// </summary>
         public Goods()
         {
         }
+        /// <summary>
+        /// 构造函数
+        /// 传入参数id从数据库取出id等于传入id的实例
+        /// </summary>
+        /// <param name="id"></param>
         public Goods(int id)
         {
             List<Goods> goodList = getWhere("id", id.ToString());
@@ -54,12 +71,20 @@ namespace SecondHandMarket.Model
             this.UserName = goodList[0].UserName;
             this.GoodName = goodList[0].GoodName;
         }
-
+        /// <summary>
+        /// 获取所有商品
+        /// </summary>
+        /// <returns>List<Goods></returns>
         public List<Goods> getAll()
         {
             return getWhere("","");
         }
-
+        /// <summary>
+        /// 根据条件从数据库获取商品
+        /// </summary>
+        /// <param name="field">字段</param>
+        /// <param name="value">字段对应值</param>
+        /// <returns>List<Goods></returns>
         public List<Goods> getWhere(string field, string value)
         {
             string sqlString = "select * from [Goods] order by add_date desc";
@@ -90,7 +115,10 @@ namespace SecondHandMarket.Model
             }
             return goodsList;
         }
-
+        /// <summary>
+        /// 添加一个商品
+        /// </summary>
+        /// <returns>bool</returns>
         public bool add()
         {
             string sqlString = "insert into Goods([good_name],[picture],[new_pirce],[old_pirce],[add_date],[user_name])values(@GoodName,@Picture,@NewPirce,@OldPirce,@AddDate,@UserName)";
@@ -123,7 +151,10 @@ namespace SecondHandMarket.Model
                 return false;
             }
         }
-
+        /// <summary>
+        /// 删除一个商品
+        /// </summary>
+        /// <returns>bool</returns>
         public bool del()
         {
             string sqlString = "DELETE FROM [Goods] WHERE id ="+Id;
@@ -137,7 +168,10 @@ namespace SecondHandMarket.Model
                 return false;
             }
         }
-
+        /// <summary>
+        /// 编辑商品
+        /// </summary>
+        /// <returns>bool</returns>
         public bool edit()
         {
             string sqlString = "UPDATE [dbo].[Goods] SET [good_name] = @GoodName,[picture] = @Picture,[new_pirce] = @NewPirce ,[old_pirce] = @OldPirce WHERE id = @Id";
@@ -167,7 +201,11 @@ namespace SecondHandMarket.Model
                 return false;
             }
         }
-
+        /// <summary>
+        /// 无实际业务故未实现
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public bool findByName(string name)
         {
             throw new NotImplementedException();

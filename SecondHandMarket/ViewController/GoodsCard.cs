@@ -20,7 +20,11 @@ namespace SecondHandMarket.ViewController
             this.good = good;
             InitializeComponent();
         }
-
+        /// <summary>
+        /// 初始化Card信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GoodsCard_Load(object sender, EventArgs e)
         {
             MemoryStream ms = new MemoryStream(good.Picture);
@@ -30,7 +34,11 @@ namespace SecondHandMarket.ViewController
             labelNewPirce.Text = good.NewPirce.ToString();
             labelAddDate.Text = good.AddDate.Substring(0,11);
         }
-
+        /// <summary>
+        /// 点击购买图片弹出联系电话
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("购买此二手商品请联系电话：" + good.UserName);

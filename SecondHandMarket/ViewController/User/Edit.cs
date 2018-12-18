@@ -20,7 +20,11 @@ namespace SecondHandMarket.ViewController.User
             good = new Goods(goodId);
             InitializeComponent();
         }
-
+        /// <summary>
+        /// 加载商品信息到控件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Edit_Load(object sender, EventArgs e)
         {
             textBox1.Text = good.GoodName;
@@ -28,7 +32,11 @@ namespace SecondHandMarket.ViewController.User
             textBox3.Text = good.OldPirce.ToString();
             pictureBox1.Image = Image.FromStream(new MemoryStream(good.Picture));
         }
-
+        /// <summary>
+        /// 修改图片
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             openFileDialog1.Title = "请选择要插入的图片";
@@ -41,7 +49,11 @@ namespace SecondHandMarket.ViewController.User
                 pictureBox1.ImageLocation = openFileDialog1.FileName;
             }
         }
-
+        /// <summary>
+        /// 修改按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             double newPirce = 0.0;//新品价格
