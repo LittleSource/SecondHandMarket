@@ -29,23 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabelAdd = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabelRefresh = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonMe = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabelMe = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripLabelFind = new System.Windows.Forms.ToolStripLabel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.toolStripButtonAdd = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonMe = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonFind = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabelFind = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +67,15 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "二手市场";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 20);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(712, 540);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // toolStrip1
             // 
@@ -90,6 +100,17 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripButtonAdd
+            // 
+            this.toolStripButtonAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAdd.Image = global::SecondHandMarket.Properties.Resources.icons8_Plus_40px;
+            this.toolStripButtonAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAdd.Name = "toolStripButtonAdd";
+            this.toolStripButtonAdd.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonAdd.Text = "toolStripButton1";
+            this.toolStripButtonAdd.ToolTipText = "发布商品";
+            this.toolStripButtonAdd.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // toolStripLabelAdd
             // 
             this.toolStripLabelAdd.Name = "toolStripLabelAdd";
@@ -102,6 +123,17 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButtonRefresh
+            // 
+            this.toolStripButtonRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonRefresh.Image = global::SecondHandMarket.Properties.Resources.icons8_Refresh_40px;
+            this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
+            this.toolStripButtonRefresh.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonRefresh.Text = "toolStripButton5";
+            this.toolStripButtonRefresh.ToolTipText = "刷新";
+            this.toolStripButtonRefresh.Click += new System.EventHandler(this.toolStripButtonRefresh_Click);
+            // 
             // toolStripLabelRefresh
             // 
             this.toolStripLabelRefresh.Name = "toolStripLabelRefresh";
@@ -113,6 +145,16 @@
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButtonMe
+            // 
+            this.toolStripButtonMe.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonMe.Image = global::SecondHandMarket.Properties.Resources.icons8_User_Menu_Male_40px;
+            this.toolStripButtonMe.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonMe.Name = "toolStripButtonMe";
+            this.toolStripButtonMe.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonMe.Text = "toolStripButton1";
+            this.toolStripButtonMe.Click += new System.EventHandler(this.toolStripButtonMe_Click);
             // 
             // toolStripLabelMe
             // 
@@ -140,53 +182,6 @@
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
             // 
-            // toolStripLabelFind
-            // 
-            this.toolStripLabelFind.Name = "toolStripLabelFind";
-            this.toolStripLabelFind.Size = new System.Drawing.Size(32, 22);
-            this.toolStripLabelFind.Text = "搜索";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 20);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(712, 540);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // toolStripButtonAdd
-            // 
-            this.toolStripButtonAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAdd.Image = global::SecondHandMarket.Properties.Resources.icons8_Plus_40px;
-            this.toolStripButtonAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAdd.Name = "toolStripButtonAdd";
-            this.toolStripButtonAdd.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonAdd.Text = "toolStripButton1";
-            this.toolStripButtonAdd.ToolTipText = "发布商品";
-            this.toolStripButtonAdd.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButtonRefresh
-            // 
-            this.toolStripButtonRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonRefresh.Image = global::SecondHandMarket.Properties.Resources.icons8_Refresh_40px;
-            this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
-            this.toolStripButtonRefresh.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonRefresh.Text = "toolStripButton5";
-            this.toolStripButtonRefresh.ToolTipText = "刷新";
-            this.toolStripButtonRefresh.Click += new System.EventHandler(this.toolStripButtonRefresh_Click);
-            // 
-            // toolStripButtonMe
-            // 
-            this.toolStripButtonMe.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonMe.Image = global::SecondHandMarket.Properties.Resources.icons8_User_Menu_Male_40px;
-            this.toolStripButtonMe.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonMe.Name = "toolStripButtonMe";
-            this.toolStripButtonMe.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonMe.Text = "toolStripButton1";
-            this.toolStripButtonMe.Click += new System.EventHandler(this.toolStripButtonMe_Click);
-            // 
             // toolStripButtonFind
             // 
             this.toolStripButtonFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -198,6 +193,12 @@
             this.toolStripButtonFind.ToolTipText = "搜索";
             this.toolStripButtonFind.Click += new System.EventHandler(this.toolStripButtonFind_Click);
             // 
+            // toolStripLabelFind
+            // 
+            this.toolStripLabelFind.Name = "toolStripLabelFind";
+            this.toolStripLabelFind.Size = new System.Drawing.Size(32, 22);
+            this.toolStripLabelFind.Text = "搜索";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -205,6 +206,7 @@
             this.ClientSize = new System.Drawing.Size(712, 588);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "淘二手";

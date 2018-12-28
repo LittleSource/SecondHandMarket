@@ -34,7 +34,7 @@ namespace SecondHandMarket
         /// <summary>
         /// 向listView1加载我的所有商品数据
         /// </summary>
-        private void listView1_Load()//hasGoods没写没判断
+        private void listView1_Load()
         {
             Goods goods = new Goods();
             List<Goods> goodsList = goods.getWhere("user_name", User.NowLoginName);

@@ -65,11 +65,12 @@
             this.labelNewPirce.AutoSize = true;
             this.labelNewPirce.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelNewPirce.ForeColor = System.Drawing.Color.LightSlateGray;
-            this.labelNewPirce.Location = new System.Drawing.Point(144, 194);
+            this.labelNewPirce.Location = new System.Drawing.Point(147, 194);
             this.labelNewPirce.Name = "labelNewPirce";
             this.labelNewPirce.Size = new System.Drawing.Size(70, 24);
             this.labelNewPirce.TabIndex = 4;
             this.labelNewPirce.Text = "199.8";
+            this.labelNewPirce.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelAddDate
             // 

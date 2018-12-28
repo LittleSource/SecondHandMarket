@@ -59,7 +59,14 @@ namespace SecondHandMarket
         /// <param name="e"></param>
         private void toolStripButtonMe_Click(object sender, EventArgs e)
         {
-            new MyGoods().ShowDialog();
+            if (goods.hasGoods(User.NowLoginName))
+            {
+                new MyGoods().ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("检测到您还没有发布过商品，请先发布一个商品再试！","提示",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
         /// <summary>
         /// 搜索按钮

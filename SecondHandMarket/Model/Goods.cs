@@ -201,6 +201,18 @@ namespace SecondHandMarket.Model
                 return false;
             }
         }
+        public bool hasGoods(string userName)
+        {
+            List<Goods> goodList = getWhere("user_name", userName);
+            if(goodList.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         /// <summary>
         /// 无实际业务故未实现
         /// </summary>
