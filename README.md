@@ -1,5 +1,5 @@
 ## C#-二手交易市场
-###### 注：一个小小的实训作业而已，在学习MVC三层架构过程中的一个小项目
+###### 注：一个小小的实训作业，在学习MVC三层架构过程中的一个小作品
 ![image](https://raw.githubusercontent.com/LittleSource/SecondHandMarket/master/example1.png)
 ![image](https://raw.githubusercontent.com/LittleSource/SecondHandMarket/master/example2.png)
 ![image](https://raw.githubusercontent.com/LittleSource/SecondHandMarket/master/example3.png)
